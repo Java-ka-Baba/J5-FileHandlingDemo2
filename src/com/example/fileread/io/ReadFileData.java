@@ -13,8 +13,13 @@ public class ReadFileData {
         FileReader fileReader = new FileReader(file);
         //read line by line
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line = bufferedReader.readLine();
-        fileData.append(line);
+        String line = "";
+        while (line != null) {
+            line = bufferedReader.readLine();
+            if(line != null) {
+                fileData.append(line);
+            }
+        }
         return fileData;
     }
 }
